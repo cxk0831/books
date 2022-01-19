@@ -1,0 +1,35 @@
+<!-- Firefox 浏览器中，会导致 :active 失效 -->
+<!-- 阻止鼠按钮的默认事件可以让拖动效果更流畅 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active-btn {
+            display: inline-block;
+            background-color: red;
+        }
+        .active-btn:active {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    正常情况下：
+    <a href="javascript:" class="active-btn">按下</a>
+    包含JS：
+    <a href="javascript:" class="active-btn" id="button">按下</a>
+</body>
+<script>
+    const button = document.getElementById('button');
+    if(button.addEventListener){
+        button.addEventListener('mousedown', function(event){
+            event.preventDefault();
+        })
+    }
+</script>
+</html>
