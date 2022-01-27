@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .box[data-demo1] {
+            width: 200px;
+            padding: 10px;
+            background-color: #cd0000;
+        }
+        .floatDiv[data-demo1] {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            float: left;
+        }
+        .clear[data-demo1]::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+    <h4>例子1：块元素清除浮动</h4>
+    <div class="box clear" data-demo1>
+        <div class="floatDiv" data-demo1>你好世界</div>
+</body>
+</html>

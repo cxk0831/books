@@ -1,0 +1,1 @@
+- 块级元素不一定是 display: block，比如 `<li>` 元素是块级元素，但是它是 display: list-item；其他块级元素还有 display: table、display: flex
